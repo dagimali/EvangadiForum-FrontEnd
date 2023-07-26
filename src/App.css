@@ -1,0 +1,13 @@
+/** @format */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+input {
+  border: solid;
+  width: 16vw;
+  border-color: grey;
+}
+

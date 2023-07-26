@@ -1,0 +1,8 @@
+/** @format */
+
+.textField {
+  border: solid;
+  padding: 0, 1px;
+  height: fit-content;
+  border-color: grey;
+}
