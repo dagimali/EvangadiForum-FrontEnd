@@ -62,10 +62,10 @@ function App() {
           />
           <Route path="/questions/:questionId" element={<SingleQuestion />} />
           <Route path="/comment" element={<Comment />} />
-          <Route
+          {/* <Route
             path="/questions/:questionId/questions/:questionId"
             element={<SingleQuestion />}
-          />
+          /> */}
         </Routes>
         <Footer />
       </Router>

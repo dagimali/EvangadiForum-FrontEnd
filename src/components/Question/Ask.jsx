@@ -26,15 +26,18 @@ const Ask = () => {
       },
       { headers: { "x-auth-token": token } }
     );
-    setQuestionData({
-      title: questionRes.data.title,
-      question: questionRes.data.question,
-    });
+    // setQuestionData({
+    //   title: questionRes.data.title,
+    //   question: questionRes.data.question,
+    // });
     navigate("/");
   };
   useEffect(() => {
-    if (questionData.title) navigate("/");
-  }, [questionData.title, navigate]);
+    if (questionData.title) {
+      // Reset the questionData in the context after the question is inserted.
+      setQuestionData({});
+    }
+  }, [questionData.title, setQuestionData]);
   return (
     <div className="drop-shadow-2xl pb-12 min-h-[calc(100vh-280px)]">
       <div className="w-1/3 mx-auto mt-20 space-y-2">

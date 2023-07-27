@@ -22,8 +22,6 @@ const SingleQuestion = () => {
         // console.log(filteredQuestion);
         setSingleData(filteredQuestion[0]);
       });
-
-    // if (!userData.user) navigate("/login");
   }, []);
   return (
     <div className="space-y-3 w-5/6 mt-36 m-auto min-h-[calc(100vh-280px)] ">

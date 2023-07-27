@@ -13,16 +13,20 @@ const Home = () => {
     navigate("/ask");
   };
   useEffect(() => {
-    fetch("http://localhost:3000/api/users/questions")
-      .then((response) => response.json())
-      .then((data) => {
-        setListofQuestions(data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    // if (!list0fQuestions) navigate("/login");
-  }, []);
+    if (!userData.user) {
+      navigate("/login");
+    } else {
+      fetch("http://localhost:3000/api/users/questions")
+        .then((response) => response.json())
+        .then((data) => {
+          setListofQuestions(data.results);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [userData.user]);
+  if (!userData.user) return null;
   // console.log(list0fQuestions);
   return (
     <div className="mx-52 bg-gray-200">

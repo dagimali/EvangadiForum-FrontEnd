@@ -44,17 +44,23 @@ const QuestionAnswer = () => {
       { headers: { "x-auth-token": token } }
     );
     console.log(answerRes);
-    setAnswerData({
-      answer: answerRes.data.answer,
-      questionId: answerRes.data.questionId,
-    });
+    // setAnswerData({
+    //   answer: answerRes.data.answer,
+    //   questionId: answerRes.data.questionId,
+    // });
+    setForm({});
 
-    // Rest of the code remains the same
     // navigate("/");
-    e.target.reset("");
+    e.target.reset();
   };
   // console.log(answerData);
   // console.log(questionID);
+  useEffect(() => {
+    if (answerData.answer) {
+      // Reset the questionData in the context after the question is inserted.
+      setAnswerData({});
+    }
+  }, [answerData.answer, setAnswerData]);
   return (
     <div className=" min-h-[calc(100vh-192px)]">
       <div className="text-center font-bold">
