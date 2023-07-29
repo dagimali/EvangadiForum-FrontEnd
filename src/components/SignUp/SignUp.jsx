@@ -9,6 +9,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import { TextField } from "@mui/material";
+import config from "../../../config";
 const SignUp = () => {
   const [userData, setUserData] = useContext(UserContext);
   const navigate = useNavigate();
@@ -27,15 +28,12 @@ const SignUp = () => {
     e.preventDefault();
     try {
       // sending data to be registered in the db
-      await axios.post(`${REACT_APP_base_url}/api/users`, form);
+      await axios.post(`${config.base_url}/api/users`, form);
       // Once registered the login automaticlly so send the new user info to be logged
-      const loginRes = await axios.post(
-        `${REACT_APP_base_url}/api/users/login`,
-        {
-          email: form.email,
-          password: form.password,
-        }
-      );
+      const loginRes = await axios.post(`${config.base_url}/api/users/login`, {
+        email: form.email,
+        password: form.password,
+      });
 
       // set global state with the new user-info
       setUserData({

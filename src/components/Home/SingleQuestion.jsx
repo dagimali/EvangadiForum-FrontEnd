@@ -5,13 +5,14 @@ import { useParams, Link } from "react-router-dom";
 import Answers from "../Question/Answers";
 import userImg from "../../commonResource/Images/icons8-user-50.png";
 import QuestionAnswer from "../Question/QuestionAnswer";
+import config from "../../../config";
 const SingleQuestion = () => {
   const [singleData, setSingleData] = useState([]);
 
   const { questionId } = useParams();
 
   useEffect(() => {
-    fetch(`${REACT_APP_base_url}/api/users/questions`)
+    fetch(`${config.base_url}/api/users/questions`)
       .then((response) => response.json())
       .then((data) => {
         let filteredQuestion = data?.results.filter((item) => {

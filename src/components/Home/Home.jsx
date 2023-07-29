@@ -5,10 +5,12 @@ import { UserContext } from "../../context/UserContext";
 import { Link, useNavigate } from "react-router-dom";
 import userImg from "../../commonResource/Images/icons8-user-50.png";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
+import config from "../../../config";
 const Home = () => {
   const [userData, setUserData] = useContext(UserContext);
   const [list0fQuestions, setListofQuestions] = useState([]);
   const navigate = useNavigate();
+
   const handleRequest = () => {
     navigate("/ask");
   };
@@ -16,7 +18,7 @@ const Home = () => {
     if (!userData.user) {
       navigate("/login");
     } else {
-      fetch(`${REACT_APP_base_url}/api/users/questions`)
+      fetch(`${config.base_url}/api/users/questions`)
         .then((response) => response.json())
         .then((data) => {
           setListofQuestions(data.results);

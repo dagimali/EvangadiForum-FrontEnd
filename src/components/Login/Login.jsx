@@ -9,6 +9,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import { TextField } from "@mui/material";
+import config from "../../../config";
 import "./Login.css";
 // import EvangadiBg from "../../commonResource/Images/bg-svg-f.svg"
 const Login = () => {
@@ -16,6 +17,7 @@ const Login = () => {
     password: "",
     showPassword: false,
   });
+
   const handleClickShowPassword = () => {
     setShow({ ...show, showPassword: !show.showPassword });
   };
@@ -30,7 +32,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const loginRes = await axios.post(`${REACT_APP_base_url}/api/users/login`, {
+    const loginRes = await axios.post(`${config.base_url}/api/users/login`, {
       email: form.email,
       password: form.password,
     });
@@ -47,6 +49,9 @@ const Login = () => {
   };
   useEffect(() => {
     if (userData.user) navigate("/");
+    if (!userData.user) {
+      console.log("user email or Password error");
+    }
   }, [userData.user, navigate]);
   return (
     <>

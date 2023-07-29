@@ -6,6 +6,7 @@ import { UserContext } from "../../context/UserContext";
 import "./ASK.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import config from "../../../config";
 const Ask = () => {
   const [questionData, setQuestionData] = useContext(UserContext);
   const [form, setForm] = useState({});
@@ -19,7 +20,7 @@ const Ask = () => {
     let token = localStorage.getItem("auth-token");
 
     const questionRes = await axios.post(
-      `${REACT_APP_base_url}/api/users/ask`,
+      `${config.base_url}/api/users/ask`,
       {
         title: form.title,
         question: form.question,
