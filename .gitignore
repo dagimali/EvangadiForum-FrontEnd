@@ -4,8 +4,11 @@
 .pnp
 .pnp.js 
 .env
+
+
 #  testing
 /coverage 
+/config.jsx
 #   production
 /build
 #  misc
