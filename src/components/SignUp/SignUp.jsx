@@ -27,7 +27,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       // sending data to be registered in the db
-      await axios.post("${REACT_APP_base_url}/api/users", form);
+      await axios.post(`${REACT_APP_base_url}/api/users`, form);
       // Once registered the login automaticlly so send the new user info to be logged
       const loginRes = await axios.post(
         `${REACT_APP_base_url}/api/users/login`,
