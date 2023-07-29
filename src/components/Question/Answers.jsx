@@ -14,7 +14,7 @@ const Answers = () => {
   //   const handleCountUp = () => setCountUp(countUp + 1);
   //   const handleCountDown = () => setCountDown(countDown + 1);
   useEffect(() => {
-    fetch("http://localhost:3000/api/users/allResponses")
+    fetch(`${REACT_APP_base_url}/api/users/allResponses`)
       .then((response) => response.json())
       .then((data) => {
         let filteredResonses = data?.results.filter((item) => {

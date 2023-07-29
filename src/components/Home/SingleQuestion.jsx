@@ -11,7 +11,7 @@ const SingleQuestion = () => {
   const { questionId } = useParams();
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/users/questions")
+    fetch(`${REACT_APP_base - url}/api/users/questions`)
       .then((response) => response.json())
       .then((data) => {
         let filteredQuestion = data?.results.filter((item) => {
