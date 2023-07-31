@@ -9,7 +9,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import { TextField } from "@mui/material";
-import config from "../../../config";
+// import config from "../../../config";
 import "./Login.css";
 // import EvangadiBg from "../../commonResource/Images/bg-svg-f.svg"
 const Login = () => {

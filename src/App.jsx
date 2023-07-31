@@ -13,7 +13,7 @@ import Nav from "./components/Nav/Nav";
 import Footer from "./components/Nav/Footer";
 import SingleQuestion from "./components/Home/SingleQuestion";
 import Comment from "./components/Question/Comment";
-import config from "../config";
+// import config from "../config";
 function App() {
   const [userData, setUserData] = useContext(UserContext);
   const checkLoggedIn = async () => {

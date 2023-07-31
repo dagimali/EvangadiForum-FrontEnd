@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import Answers from "../Question/Answers";
 import userImg from "../../commonResource/Images/icons8-user-50.png";
 import QuestionAnswer from "../Question/QuestionAnswer";
-import config from "../../../config";
+// import config from "../../../config";
 const SingleQuestion = () => {
   const [singleData, setSingleData] = useState([]);
 

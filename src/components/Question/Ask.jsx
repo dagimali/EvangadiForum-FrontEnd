@@ -6,7 +6,7 @@ import { UserContext } from "../../context/UserContext";
 import "./ASK.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import config from "../../../config";
+// import config from "../../../config";
 const Ask = () => {
   const [questionData, setQuestionData] = useContext(UserContext);
   const [form, setForm] = useState({});

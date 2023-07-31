@@ -6,7 +6,7 @@ import userImg from "../../commonResource/Images/icons8-user-50.png";
 // import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 // import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 // import { Button } from "@mui/material";
-import config from "../../../config";
+// import config from "../../../config";
 const Answers = () => {
   const [answers, setAnswers] = useState([]);
   //   const [countUp, setCountUp] = useState(0);
