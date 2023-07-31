@@ -17,7 +17,7 @@ const QuestionAnswer = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   useEffect(() => {
-    fetch(`${config.base_url}/api/users/questions`)
+    fetch(`${process.env.REACT_APP_base_url}/api/users/questions`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -36,7 +36,7 @@ const QuestionAnswer = () => {
 
     let questionID = singleData.question_id;
     const answerRes = await axios.post(
-      `${config.base_url}/api/users/response/`,
+      `${process.env.REACT_APP_base_url}/api/users/response/`,
       {
         answer: form.answer,
         questionId: questionID, // Add the question ID to the request body

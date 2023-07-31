@@ -12,7 +12,7 @@ const SingleQuestion = () => {
   const { questionId } = useParams();
 
   useEffect(() => {
-    fetch(`${config.base_url}/api/users/questions`)
+    fetch(`${process.env.REACT_APP_base_url}/api/users/questions`)
       .then((response) => response.json())
       .then((data) => {
         let filteredQuestion = data?.results.filter((item) => {

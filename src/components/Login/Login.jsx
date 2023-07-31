@@ -32,10 +32,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const loginRes = await axios.post(`${config.base_url}/api/users/login`, {
-      email: form.email,
-      password: form.password,
-    });
+    const loginRes = await axios.post(
+      `${process.env.REACT_APP_base_url}/api/users/login`,
+      {
+        email: form.email,
+        password: form.password,
+      }
+    );
 
     // update global state with response from backend(user-info)
     setUserData({

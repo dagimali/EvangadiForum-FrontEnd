@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import userImg from "../../commonResource/Images/icons8-user-50.png";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import { Button } from "@mui/material";
+// import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+// import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+// import { Button } from "@mui/material";
 import config from "../../../config";
 const Answers = () => {
   const [answers, setAnswers] = useState([]);
@@ -15,7 +15,7 @@ const Answers = () => {
   //   const handleCountUp = () => setCountUp(countUp + 1);
   //   const handleCountDown = () => setCountDown(countDown + 1);
   useEffect(() => {
-    fetch(`${config.base_url}/api/users/allResponses`)
+    fetch(`${process.env.REACT_APP_base_url}/api/users/allResponses`)
       .then((response) => response.json())
       .then((data) => {
         let filteredResonses = data?.results.filter((item) => {

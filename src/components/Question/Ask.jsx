@@ -20,7 +20,7 @@ const Ask = () => {
     let token = localStorage.getItem("auth-token");
 
     const questionRes = await axios.post(
-      `${config.base_url}/api/users/ask`,
+      `${process.env.REACT_APP_base_url}/api/users/ask`,
       {
         title: form.title,
         question: form.question,

@@ -25,9 +25,12 @@ function App() {
     } else {
       // if token exists in localstorage then use auth to verify token and get user info
 
-      const userRes = await axios.get(`${config.base_url}/api/users`, {
-        headers: { "x-auth-token": token },
-      });
+      const userRes = await axios.get(
+        `${process.env.REACT_APP_base_url}/api/users`,
+        {
+          headers: { "x-auth-token": token },
+        }
+      );
       // set the global state with user info
       setUserData({
         token,
