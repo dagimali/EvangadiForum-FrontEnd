@@ -13,7 +13,7 @@ import Nav from "./components/Nav/Nav";
 import Footer from "./components/Nav/Footer";
 import SingleQuestion from "./components/Home/SingleQuestion";
 import Comment from "./components/Question/Comment";
-// import config from "../config";
+import config from "../config";
 function App() {
   const [userData, setUserData] = useContext(UserContext);
   const checkLoggedIn = async () => {
@@ -25,12 +25,9 @@ function App() {
     } else {
       // if token exists in localstorage then use auth to verify token and get user info
 
-      const userRes = await axios.get(
-        `${process.env.REACT_APP_base_url}/api/users`,
-        {
-          headers: { "x-auth-token": token },
-        }
-      );
+      const userRes = await axios.get(`${config.base_url}/api/users`, {
+        headers: { "x-auth-token": token },
+      });
       // set the global state with user info
       setUserData({
         token,
