@@ -48,6 +48,7 @@ const SignUp = () => {
       // navigate user to homepage
       navigate("/");
     } catch (err) {
+      console.log("problem SignUp");
       console.log("Problem =>", err);
     }
   };
