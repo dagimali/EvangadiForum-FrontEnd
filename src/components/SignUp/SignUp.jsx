@@ -21,6 +21,7 @@ const SignUp = () => {
     password: "",
     showPassword: false,
   });
+  const baseURL = process.env.REACT_APP_base_url;
   const handleClickShowPassword = () => {
     setShow({ ...show, showPassword: !show.showPassword });
   };
@@ -28,15 +29,12 @@ const SignUp = () => {
     e.preventDefault();
     try {
       // sending data to be registered in the db
-      await axios.post(`${process.env.REACT_APP_base_url}/api/users`, form);
+      await axios.post(`${baseURL}/api/users`, form);
       // Once registered the login automaticlly so send the new user info to be logged
-      const loginRes = await axios.post(
-        `${process.env.REACT_APP_base_url}/api/users/login`,
-        {
-          email: form.email,
-          password: form.password,
-        }
-      );
+      const loginRes = await axios.post(`${baseURL}/api/users/login`, {
+        email: form.email,
+        password: form.password,
+      });
 
       // set global state with the new user-info
       setUserData({

@@ -12,10 +12,11 @@ const Answers = () => {
   //   const [countUp, setCountUp] = useState(0);
   //   const [countDown, setCountDown] = useState(0);
   const { questionId } = useParams();
+  const baseURL = process.env.REACT_APP_base_url;
   //   const handleCountUp = () => setCountUp(countUp + 1);
   //   const handleCountDown = () => setCountDown(countDown + 1);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_base_url}/api/users/allResponses`)
+    fetch(`${baseURL}/api/users/allResponses`)
       .then((response) => response.json())
       .then((data) => {
         let filteredResonses = data?.results.filter((item) => {

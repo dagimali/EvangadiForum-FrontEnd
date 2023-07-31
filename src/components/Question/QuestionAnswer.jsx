@@ -13,11 +13,12 @@ const QuestionAnswer = () => {
   const [form, setForm] = useState({});
   const navigate = useNavigate();
   const { questionId } = useParams();
+  const baseURL = process.env.REACT_APP_base_url;
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_base_url}/api/users/questions`)
+    fetch(`${baseURL}/api/users/questions`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -36,7 +37,7 @@ const QuestionAnswer = () => {
 
     let questionID = singleData.question_id;
     const answerRes = await axios.post(
-      `${process.env.REACT_APP_base_url}/api/users/response/`,
+      `${baseURL}/api/users/response/`,
       {
         answer: form.answer,
         questionId: questionID, // Add the question ID to the request body

@@ -14,13 +14,13 @@ const Ask = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+  const baseURL = process.env.REACT_APP_base_url;
   const handleSubmit = async (e) => {
     e.preventDefault();
     let token = localStorage.getItem("auth-token");
 
     const questionRes = await axios.post(
-      `${process.env.REACT_APP_base_url}/api/users/ask`,
+      `${baseURL}/api/users/ask`,
       {
         title: form.title,
         question: form.question,
