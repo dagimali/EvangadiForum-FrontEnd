@@ -5,7 +5,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { UserContext } from "../../context/UserContext";
 import { TextField } from "@mui/material";
-// import config from "../../../config";
+import config from "../../../config";
 const QuestionAnswer = () => {
   const [singleData, setSingleData] = useState([]);
 
@@ -13,12 +13,12 @@ const QuestionAnswer = () => {
   const [form, setForm] = useState({});
   const navigate = useNavigate();
   const { questionId } = useParams();
-  const baseURL = process.env.REACT_APP_base_url;
+  // const baseURL = process.env.REACT_APP_base_url;
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   useEffect(() => {
-    fetch(`${baseURL}/api/users/questions`)
+    fetch(`${config.base_url}/api/users/questions`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -37,7 +37,7 @@ const QuestionAnswer = () => {
 
     let questionID = singleData.question_id;
     const answerRes = await axios.post(
-      `${baseURL}/api/users/response/`,
+      `${config.base_url}/api/users/response/`,
       {
         answer: form.answer,
         questionId: questionID, // Add the question ID to the request body

@@ -16,7 +16,7 @@ import Comment from "./components/Question/Comment";
 import config from "../config";
 function App() {
   const [userData, setUserData] = useContext(UserContext);
-  const baseURL = process.env.REACT_APP_base_url;
+  // const baseURL = process.env.REACT_APP_base_url;
   const checkLoggedIn = async () => {
     let token = localStorage.getItem("auth-token");
     if (token === null) {
@@ -26,7 +26,7 @@ function App() {
     } else {
       // if token exists in localstorage then use auth to verify token and get user info
 
-      const userRes = await axios.get(`${baseURL}/api/users`, {
+      const userRes = await axios.get(`${config.base_url}/api/users`, {
         headers: { "x-auth-token": token },
       });
       // set the global state with user info

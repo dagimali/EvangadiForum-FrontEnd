@@ -18,7 +18,7 @@ const Home = () => {
     if (!userData.user) {
       navigate("/login");
     } else {
-      fetch(`${process.env.REACT_APP_base_url}/api/users/questions`)
+      fetch(`${config.base_url}/api/users/questions`)
         .then((response) => response.json())
         .then((data) => {
           setListofQuestions(data.results);

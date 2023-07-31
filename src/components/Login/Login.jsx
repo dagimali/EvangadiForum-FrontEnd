@@ -9,7 +9,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
 import { TextField } from "@mui/material";
-// import config from "../../../config";
+import config from "../../../config";
 import "./Login.css";
 // import EvangadiBg from "../../commonResource/Images/bg-svg-f.svg"
 const Login = () => {
@@ -17,7 +17,7 @@ const Login = () => {
     password: "",
     showPassword: false,
   });
-  const baseURL = process.env.REACT_APP_base_url;
+  // const baseURL = process.env.REACT_APP_base_url;
   const handleClickShowPassword = () => {
     setShow({ ...show, showPassword: !show.showPassword });
   };
@@ -32,7 +32,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const loginRes = await axios.post(`${baseURL}/api/users/login`, {
+    const loginRes = await axios.post(`${config.base_url}/api/users/login`, {
       email: form.email,
       password: form.password,
     });
