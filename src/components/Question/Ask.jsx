@@ -25,7 +25,7 @@ const Ask = () => {
         title: form.title,
         question: form.question,
       },
-      { headers: { "x-auth-token": token }, credentials: true }
+      { headers: { "x-auth-token": token } }
     );
     // setQuestionData({
     //   title: questionRes.data.title,
