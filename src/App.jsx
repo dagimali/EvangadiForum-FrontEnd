@@ -17,8 +17,8 @@ import config from "../config";
 function App() {
   const [userData, setUserData] = useContext(UserContext);
   // const baseURL = process.env.REACT_APP_base_url;
+  let token = localStorage.getItem("auth-token");
   const checkLoggedIn = async () => {
-    let token = localStorage.getItem("auth-token");
     if (token === null) {
       // token not in local storage then set auth token empty
       localStorage.setItem("auth-token", "");
@@ -29,6 +29,7 @@ function App() {
       const userRes = await axios.get(`${config.base_url}/api/users`, {
         headers: { "x-auth-token": token },
       });
+      console.log(userRes);
       // set the global state with user info
       setUserData({
         token,

@@ -15,9 +15,9 @@ const Ask = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   // const baseURL = process.env.REACT_APP_base_url;
+  let token = localStorage.getItem("auth-token");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let token = localStorage.getItem("auth-token");
 
     const questionRes = await axios.post(
       `${config.base_url}/api/users/ask`,
@@ -34,7 +34,7 @@ const Ask = () => {
     navigate("/");
   };
   useEffect(() => {
-    if (questionData.title) {
+    if (questionData?.title) {
       // Reset the questionData in the context after the question is inserted.
       setQuestionData({});
     }
