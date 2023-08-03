@@ -1,13 +1,16 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import userImg from "../../commonResource/Images/icons8-user-50.png";
+import { UserContext } from "../../context/UserContext";
 // import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 // import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 // import { Button } from "@mui/material";
 import config from "../../../config";
 const Answers = () => {
+  const { userData, setUserData } = useContext(UserContext);
+  const [answerData, setAnswerData] = useContext(UserContext);
   const [answers, setAnswers] = useState([]);
   //   const [countUp, setCountUp] = useState(0);
   //   const [countDown, setCountDown] = useState(0);
@@ -15,6 +18,7 @@ const Answers = () => {
   // const baseURL = process.env.REACT_APP_base_url;
   //   const handleCountUp = () => setCountUp(countUp + 1);
   //   const handleCountDown = () => setCountDown(countDown + 1);
+
   useEffect(() => {
     fetch(`${config.base_url}/api/users/allResponses`)
       .then((response) => response.json())
@@ -23,8 +27,11 @@ const Answers = () => {
           return item?.question_id == questionId;
         });
         setAnswers(filteredResonses);
+        return () => {
+          socket.disconnect();
+        };
       });
-  }, [answers]);
+  }, [answerData]);
   console.log(answers);
   return (
     <div>
