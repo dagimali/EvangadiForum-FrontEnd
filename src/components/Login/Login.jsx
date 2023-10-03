@@ -54,9 +54,9 @@ const Login = () => {
     }
   }, [userData.user, navigate]);
   return (
-    <>
-      <div className="px-36 pt-28 w-screen min-h-[calc(100vh-192px)]  bg-[url('./commonResource/Images/bg-svg-f.svg')] bg-no-repeat bg-cover object-center -z-10">
-        <div className="flex justify-between py-2 space-x-5 drop-shadow-2xl px-5 scale-100">
+    <div className="">
+      <div className="pageWidth pt-28 w-full min-h-[calc(100vh-192px)]  bg-[url('./commonResource/Images/bg-svg-f.svg')] bg-no-repeat bg-cover object-center -z-10">
+        <div className="nav-internal-wrapper py-2 space-x-5 drop-shadow-2xl scale-100">
           <div className="flex-1 border-solid object-center bg-white text-center px-5 py-10 rounded-md space-y-2">
             <h1>Login to your account</h1>
             <small>
@@ -105,31 +105,28 @@ const Login = () => {
               Create an account?
             </Link>
           </div>
-          <div className="flex-1 w-32 p-auto m-auto space-y-3">
+          <div className="flex-1 p-auto m-auto space-y-3 w-full">
             <small className="text-orange-400 px-4 text-sm">About</small>
             <h1 className="text-[3vw] font-bold">Evangadi Networks Q&A</h1>
             <p className="text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
-              nisi odio, commodi quae voluptate beatae iste expedita possimus
-              eum perspiciatis sint sapiente.
+              No matter what stage of life you are in, whether you’re just
+              starting elementary school or being promoted to CEO of a Fortune
+              500 company, you have much to offer to those who are trying to
+              follow in your footsteps.
             </p>
             <p className="text-sm text-gray-600">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Cupiditate perspiciatis dignissimos eaque blanditiis quis
-              voluptates quisquam corrupti.
+              Wheather you are willing to share your knowledge or you are just
+              looking to meet mentors of your own, please start by joining the
+              network here.
             </p>
-            <p className="text-sm text-gray-600">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Temporibus incidunt laudantium a ipsum iste sapiente reiciendis
-              quis hic perspiciatis!
-            </p>
+
             <button className="border-gray-50 border-2 bg-orange-400 px-4 text-lg rounded-md mt-3">
               HOW IT WORKS
             </button>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

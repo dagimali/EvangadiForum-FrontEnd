@@ -6,3 +6,9 @@
   height: fit-content;
   border-color: grey;
 }
+@media (min-width: 576px) {
+  .nav-internal-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

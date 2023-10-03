@@ -1,0 +1,30 @@
+/** @format */
+.menuIcon {
+  display: none;
+}
+.slider {
+  right: 0;
+  transition: transform 0.3s ease-in-out; /* Add transition property */
+}
+
+/* Add a class for sliding in from left */
+.slide-in {
+  right: -100%;
+  transform: translateX(-100%);
+}
+@media (max-width: 767px) {
+  .nav-list {
+    display: none;
+  }
+  .menuIcon {
+    display: block !important;
+  }
+  .loginMenu {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .slide-in {
+    display: none;
+  }
+}

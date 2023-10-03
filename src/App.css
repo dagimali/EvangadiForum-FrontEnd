@@ -11,3 +11,33 @@ input {
   border-color: grey;
 }
 
+.pageWidth {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-top: 0.5rem;
+}
+@media (min-width: 567px) {
+  .pageWidth {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+}
+/* @media only screen and (min-width: 568px) {
+  .pageWidth {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+} */
+@media (min-width: 767px) {
+  .pageWidth {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .pageWidth {
+    padding-left: 9rem;
+    padding-right: 9rem;
+  }
+}
