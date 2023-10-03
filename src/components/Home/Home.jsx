@@ -6,11 +6,11 @@ import { Link, useNavigate } from "react-router-dom";
 import userImg from "../../commonResource/Images/icons8-user-50.png";
 import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import config from "../../../config";
+import HomeLink from "./HomeLink";
 const Home = () => {
   const [userData, setUserData] = useContext(UserContext);
   const [list0fQuestions, setListofQuestions] = useState([]);
   const navigate = useNavigate();
-
   const handleRequest = () => {
     navigate("/ask");
   };
@@ -31,7 +31,7 @@ const Home = () => {
   if (!userData.user) return null;
   // console.log(list0fQuestions);
   return (
-    <div className="mx-52 bg-gray-200">
+    <div className=" bg-gray-200 w-full">
       <div className="flex justify-between pt-20 mx-10">
         <button
           onClick={handleRequest}
@@ -51,12 +51,12 @@ const Home = () => {
                 <div className="flex justify-between w-11/12 mr-8">
                   <div className="">
                     <img src={userImg} alt="" />
-                    <small>{item.user_name}</small>
+                    <HomeLink description={item.user_name} className="pt-3" />
                   </div>
 
                   <h1 className=" font-bold ">{item.question}</h1>
 
-                  <small className="align-text-bottom items-baseline">
+                  <small className="align-text-bottom items-baseline hidden md:block">
                     {item.posted_date}
                   </small>
                 </div>

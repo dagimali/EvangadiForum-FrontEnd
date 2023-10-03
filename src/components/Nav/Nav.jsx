@@ -106,7 +106,7 @@ const Nav = () => {
                 {userData.user ? (
                   // If user data is available (signed in)
                   <button
-                    className="bg-blue-600 hover:bg-orange-500 text-white object-cover text-sm w-[3vw] h-8 rounded-md"
+                    className="bg-blue-600 hover:bg-orange-500 text-white object-cover text-sm w-[18vw] h-8 rounded-md"
                     onClick={logout}
                   >
                     Log out

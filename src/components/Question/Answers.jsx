@@ -8,6 +8,7 @@ import { UserContext } from "../../context/UserContext";
 // import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 // import { Button } from "@mui/material";
 import config from "../../../config";
+import AnswerLink from "./AnswerLink";
 const Answers = () => {
   const { userData, setUserData } = useContext(UserContext);
   const [answerData, setAnswerData] = useContext(UserContext);
@@ -34,11 +35,11 @@ const Answers = () => {
   }, [answerData]);
   console.log(answers);
   return (
-    <div>
+    <div className="w-full">
       <h2 className="font-bold text-lg text-center">
         Response from the members
       </h2>
-      <div className="border-bottom border-gray-400 space-y-1  bg-slate-50 object-end rounded-lg w-[60vw] float-right py-5 ">
+      <div className="border-bottom border-gray-400 space-y-1  bg-slate-50 md:object-end rounded-lg w-full md:w-[60vw] float-right py-5 ">
         {answers?.map((item) => {
           return (
             <div className="px-3 my-5 border-b-2">
@@ -47,8 +48,8 @@ const Answers = () => {
                   <img src={userImg} alt="" />
                   <small>{item?.user_name}</small>
                 </div>
-                <p className=" ml-5 pt-3">{item.answer}</p>
-                <small className=" text-end text-ellipsis">
+                <AnswerLink description={item.answer} />
+                <small className=" text-end text-ellipsis hidden md:block">
                   {item.posted_date}
                 </small>
               </div>

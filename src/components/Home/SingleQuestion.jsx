@@ -41,11 +41,13 @@ const SingleQuestion = () => {
           <p className="">{singleData?.question_description}</p>
         </div>
         <div className="space-y-10 items-end">
-          <small className="text-gray-700">{singleData.posted_date}</small>
+          <small className="text-gray-700 hidden md:block">
+            {singleData.posted_date}
+          </small>
           <div className="items-end"></div>
         </div>
       </div>
-      <div className="items-end ml-40 overflow-x-hidden object-cover ">
+      <div className="items-end md:ml-40 overflow-x-hidden object-cover ">
         <Answers />
       </div>
 

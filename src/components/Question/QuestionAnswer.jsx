@@ -173,7 +173,7 @@ const QuestionAnswer = () => {
         />
         <button
           onClick={handleSubmit}
-          className="border-gray-50 border-2 bg-blue-700 px-4 text-lg rounded-md w-1/3 text-gray-100 mt-50"
+          className="border-gray-50 border-2 bg-blue-700 px-4 text-[1.5vw] rounded-md w-1/3 text-gray-100 mt-50 py-2"
         >
           Submit your answer
         </button>
